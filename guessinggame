@@ -1,0 +1,31 @@
+import random
+
+print("Welcome to the Random number guessing game!")
+print("Guess the number between 1-10 that computer chose!")
+print("You have 3 guesses. Everytime you guess wrong you lose a live")
+
+computer_choice = random.randint(0, 10)
+player_lives = 3
+end_of_game = False
+player_guesses = []
+
+while not end_of_game:
+  if player_lives > 0:
+    guess = int(input("Guess the number! "))
+    if guess in player_guesses:
+      print(f"You already guessed {guess}. Try again!")
+    elif guess == computer_choice:
+      print(f"You won game with {player_lives} live(s) remaining.")
+      end_of_game = True
+    elif guess > computer_choice:
+      player_lives -= 1
+      player_guesses.append(guess)
+      print(f"{guess} is too high! You have {player_lives} live(s) remaining.")
+    else:
+      player_lives -= 1
+      player_guesses.append(guess)
+      print(f"{guess} is too low. You have {player_lives} live(s) remaining.")
+  else:
+    end_of_game = True
+    print("You lost!")
+    
