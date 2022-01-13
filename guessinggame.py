@@ -4,7 +4,7 @@ import os
 #Function for clearing console
 def clearConsole():
     command = 'clear'
-    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+    if os.name in ('nt', 'dos'): 
         command = 'cls'
     os.system(command)
 
@@ -46,9 +46,6 @@ def gameplay():
         else:
             end_of_game = True
             print("You lost!")
-
-
-
 
 while True:
     intro()
