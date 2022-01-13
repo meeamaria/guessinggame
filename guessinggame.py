@@ -46,19 +46,18 @@ def gameplay():
         else:
             end_of_game = True
             print("You lost!")
-play = True
-while play == True:
+
+
+
+
+while True:
     intro()
     gameplay()
-    again = input("Do you want play again? y/n ")
-    if "n" or "no" in again.lower():
+    print("Do you want play again? Yes/no ")
+    again = input()
+    if again.lower() not in ("y", "yes"):
         print("Thank you for playing! See you next time!")
-        play = False
-    elif "y" or "yes" in again.lower():
+        break
+    else:
         clearConsole()
         continue
-    else:
-        print("Invalid input.")
-
-    
-    
